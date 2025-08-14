@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pondok Pesantren Al-Istiqomah Cukir Diwek Jombang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0c4b33;
+            --secondary: #f8b229;
+            --light: #f5f5f5;
+            --dark: #222;
+            --accent: #2c9a7a;
+            --text-primary: #333;
+            --text-secondary: #555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://placehold.co/1920x1080');
+            background-size: cover;
+            opacity: 0.05;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .arabic {
+            font-family: 'Amiri', serif;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(12, 75, 51, 0.8), rgba(12, 75, 51, 0.8)), 
+                        url('https://i.ibb.co.com/JMbL5x8/1.jpg') center/cover no-repeat;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero .arabic {
+            font-size: 1.8rem;
+            margin: 30px 0;
+            line-height: 2;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #e6a520;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 15px auto 0;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .program-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .program-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .program-info {
+            padding: 25px;
+        }
+
+        .program-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .program-info p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .fasilitas-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .fasilitas-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .fasilitas-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .fasilitas-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .fasilitas-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .fasilitas-card p {
+            color: var(--text-secondary);
+        }
+
+        .testimonials {
+            background-color: #f0f7f4;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonial-item {
+            padding: 40px;
+        }
+
+        .testimonial-item .quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial-item .quote::before,
+        .testimonial-item .quote::after {
+            content: '"';
+            font-size: 2rem;
+            color: var(--accent);
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .testimonial-item .quote::before {
+            top: -20px;
+            left: -15px;
+        }
+
+        .testimonial-item .quote::after {
+            bottom: -30px;
+            right: -15px;
+        }
+
+        .testimonial-item .author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .testimonial-item .author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-card i {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .contact-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .contact-card p {
+            color: var(--text-secondary);
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(44, 154, 122, 0.2);
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .footer-column p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 0;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                clip-path: circle(0px at 90% -10%);
+                transition: all 0.5s ease-out;
+                z-index: 99;
+            }
+
+            nav.active {
+                clip-path: circle(1000px at 90% -10%);
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul li {
+                margin-left: 0;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .arabic {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 1.7rem;
+            }
+
+            .contact-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://i.ibb.co.com/MyG7jbXB/517352210-18140428957416195-442474142374133970-n.jpg" alt="">
+                <div class="logo-text">
+                    <h1>Pondok Pesantren Al-Istiqomah</h1>
+                    <p>Cukir Diwek Jombang</p>
+                </div>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#programs">Program</a></li>
+                    <li><a href="#fasilitas">Fasilitas</a></li>
+                    <li><a href="#gallery">Galeri</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Pondok Pesantren Al-Istiqomah</h1>
+            <p class="arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+            <p>Menumbuhkan generasi Qur'ani yang berakhlak mulia, mandiri, dan bermanfaat bagi ummat</p>
+            <p class="arabic">طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ</p>
+            <div>
+                <a href="#programs" class="btn">Lihat Program</a>
+                <a href="#contact" class="btn btn-outline">Hubungi Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang Kami</h2>
+                <p>Pondok Pesantren Al-Istiqomah Cukir Diwek Jombang adalah lembaga pendidikan Islam yang berkomitmen untuk mencetak generasi Qur'ani yang berakhlak mulia</p>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://i.ibb.co.com/JMbL5x8/1.jpg" alt="Area dalam pesantren Al-Istiqomah dengan bangunan utama masjid tradisional Jawa, halaman luas dengan pohon rindang, dan santri yang sedang beraktivitas">
+                    
+                </div>
+                <div class="about-text">
+                    <h3>Sejarah Singkat</h3>
+                    <p>Pondok Pesantren Al-Istiqomah didirikan pada tahun 2017 oleh KH. Choirul Anam, S.H dan Bunda Titin Ummu Faudah, S.Pd dengan visi membentuk generasi muslim yang berpegang teguh pada Al-Qur'an dan Sunnah dengan pemahaman ahlus sunnah wal jama'ah.</p>
+                    <p>Kini di bawah asuhan KH. Choirul Anam, pesantren kami telah berkembang menjadi lembaga pendidikan yang mengintegrasikan kurikulum formal (Kementerian Agama) dengan pendidikan karakter islami dan program tahfidz Al-Qur'an.</p>
+                    <h3 style="margin-top: 30px;">Visi & Misi</h3>
+                    <p><strong>Visi:</strong>Menjadi lembaga dan pendidikan islami yang di ridhoi Allah SWT dalam mencerahkan dan mencerdaskan kehidupan bangsa guna membentuk santri yang beriman dan berilmu,beramal,bertaqwa menuju izzul islam wal muslimin</p>
+                    <p><strong>Misi:</strong> 
+                        <br>1. Membina dan mengembangkan dakwah dan pendidikan islami dalam arti yang seluas luas nya dengan Amar Ma'ruf Nahi Munkar.
+                        <br>2. Mengawal dan membelah Aqidah Islam yang berlandaskan pada Al-Qur'an dan Sunnah Rosul.
+                        <br>3. Menegakkan nilai-nilai kemanusiaan sesuai ajaran Islam demi kesejahteraan umat dan bangsa lahir dan batin.
+                        <br>4. Meningkatkan kualitas SDM guna mewujudkan bermasyarakat yang beriman, berilmu, beramal dan bertaqwa melalui pengembangan kegiatan yang meningkatkan Infaq dan IPTEK sesuai Aqidah Islam.
+                        <br>5. Mendorong terwujudnya persatuan dan kesatuan umat untuk kesejahteraan seluruh rakyat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Program Unggulan</h2>
+                <p>Berbagai program pendidikan yang kami tawarkan untuk membentuk generasi Qur'ani yang berakhlak mulia</p>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <img src="https://i.ibb.co.com/W4rRc8qQ/18.jpg" alt="Santri sedang menghafal Al-Qur'an di serambi masjid dengan latar pagi hari">
+                    <div class="program-info">
+                        <h3>Tahfidz Al-Qur'an</h3>
+                        <p>Program intensif menghafal Al-Qur'an dengan metode yang efektif dan bimbingan langsung dari para hafidz/hafidzah. Target hafalan minimal 5 juz dengan mutqin.</p>
+                        
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="https://i.ibb.co.com/mVvhhGts/5.jpg"" alt="Sekelompok santri mempelajari kitab kuning di bawah bimbingan ustadz">
+                    <div class="program-info">
+                        <h3>Pendidikan Diniyah</h3>
+                        <p>Pembelajaran kitab kuning meliputi Aqidah, Fiqh, Akhlak, Hadits, Sirah Nabawiyah dan ilmu-ilmu islam lainnya dengan sanad yang jelas.</p>
+                        
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="https://i.ibb.co.com/2Yh0vdSD/6.jpg" alt="Kelas formal dengan seragam sekolah dan papan tulis modern">
+                    <div class="program-info">
+                        <h3>Madrasah Formal</h3>
+                        <p>Pendidikan formal setara SD, SMP dan SMA di bawah naungan Kementerian Agama dengan kurikulum terintegrasi nilai-nilai islami.</p>
+                       
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="https://i.ibb.co.com/1JGPF8bW/2.jpg" alt="Kegiatan keterampilan santri seperti komputer, bahasa, dan kerajinan tangan">
+                    <div class="program-info">
+                        <h3>Pengembangan Bakat</h3>
+                        <p>Program ekstrakurikuler untuk mengembangkan potensi santri di bidang: bahasa Arab/Inggris, komputer, kaligrafi, olahraga, dan keterampilan hidup.</p>
+                        
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="https://i.ibb.co.com/jPYsf8cg/3.jpg" alt="Dauroh ilmiah dengan peserta mengenakan busana muslim">
+                    <div class="program-info">
+                        <h3>Program Khusus</h3>
+                        <p>Kegiatan khusus seperti dauroh ilmiah, rihlah, muhadharah, dan pembinaan intensif untuk memantapkan pemahaman agama dan karakter islami.</p>
+                        
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="https://i.ibb.co.com/fdRSxn45/4.jpg" alt="Komunitas belajar untuk berbagai jenjang usia">
+                    <div class="program-info">
+                        <h3>Program Masyarakat</h3>
+                        <p>Program untuk umum seperti Majelis Ta'lim, TPA, Kursus Bahasa Arab, dan Pembinaan keluarga sakinah bagi masyarakat sekitar.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fasilitas" class="bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Fasilitas Pesantren</h2>
+                <p>Kami menyediakan berbagai fasilitas pendukung untuk memaksimalkan proses belajar mengajar para santri</p>
+            </div>
+            <div class="fasilitas-container">
+                <div class="fasilitas-card">
+                    <i class="fas fa-mosque"></i>
+                    <h3>Masjid Sabilumuttaqin</h3>
+                    <p>Masjid dua lantai dengan kapasitas 500 jama'ah sebagai pusat ibadah dan kegiatan islami para santri.</p>
+                </div>
+                <div class="fasilitas-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Perpustakaan</h3>
+                    <p>Ribuan koleksi buku agama, umum, referensi, dan kitab-kitab klasik untuk menunjang pembelajaran.</p>
+                </div>
+                <div class="fasilitas-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Asrama Santri</h3>
+                    <p>Asrama yang nyaman dan islami dengan pengawasan ustadz/ustadzah pembina secara 24 jam.</p>
+                </div>
+                <div class="fasilitas-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Kafetaria</h3>
+                    <p>Menyediakan makanan halal dan bergizi dengan harga terjangkau untuk kebutuhan santri.</p>
+                </div>
+                <div class="fasilitas-card">
+                    <i class="fas fa-basketball-ball"></i>
+                    <h3>Lapangan Olahraga</h3>
+                    <p>Fasilitas olahraga lengkap (futsal, voli, basket, bulutangkis) untuk menyalurkan bakat santri.</p>
+                </div>
+                <div class="fasilitas-card">
+                    <i class="fas fa-wifi"></i>
+                    <h3>Akses Internet</h3>
+                    <p>Internet sehat dengan pengawasan ketat untuk keperluan belajar dan riset santri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Apa Kata Mereka?</h2>
+                <p>Testimonial dari para santri, alumni, dan orang tua wali tentang Pondok Pesantren Al-Istiqomah</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-item">
+                    <p class="quote">Saya bersyukur bisa mondok di Al-Istiqomah. Selain ilmu agama saya dapatkan, hafalan Al-Qur'an saya juga semakin lancar. Disiplin yang diajarkan membentuk karakter saya menjadi lebih baik.</p>
+                    <div class="author">
+                    
+                        <div class="author-info">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galeri Kegiatan</h2>
+                <p>Momen-momen berharga di Pondok Pesantren Al-Istiqomah Cukir Diwek Jombang</p>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co.com/SDrvfw93/11.jpg" alt="Kegiatan menghafal Al-Qur'an bersama di serambi masjid pada pagi hari">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co.com/20Xg56L1/12.jpg" alt="Pelajaran kitab kuning dengan metode bandongan di aula pesantren">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co.com/YFqWcYh1/13.jpg" alt="Acara istighotsah dan doa bersama untuk keberkahan santri">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co.com/p6CRH0Kd/14.jpg" alt="Kegiatan ekstrakurikuler kaligrafi arab dengan peserta santri putra dan putri">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co.com/rfcsbPj4/19.jpg" alt="Kegiatan ekstrakurikuler kaligrafi arab dengan peserta santri putra dan putri">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co.com/PZfh6bRQ/17.jpg" alt="Kegiatan ekstrakurikuler kaligrafi arab dengan peserta santri putra dan putri">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co.com/G3skcz7n/16.jpg" alt="Kegiatan ekstrakurikuler kaligrafi arab dengan peserta santri putra dan putri">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co.com/qFc9SNT9/15.jpg" alt="Kegiatan ekstrakurikuler kaligrafi arab dengan peserta santri putra dan putri">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Kami</h2>
+                <p>Silakan menghubungi kami untuk informasi lebih lanjut tentang pendaftaran dan kegiatan pesantren</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Alamat</h3>
+                    <p>Jl. Raya Cukir <br>Diwek, Jombang<br>Jawa Timur 61471</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Telepon</h3>
+                    <p>+62 812-3037-7617<br>+62 812-3037-7617 (WA)</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>info@alistiqomah-jombang.sch.id<br>ppalistiqomah@gmail.com</p>
+                </div>
+            </div>
+
+           
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tentang Kami</h3>
+                    <p>Pondok Pesantren Al-Istiqomah Cukir Diwek Jombang adalah lembaga pendidikan islam yang berkomitmen untuk mencetak generasi Qur'ani yang berakhlak mulia.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Link Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Profil Pesantren</a></li>
+                        <li><a href="#programs">Program Pendidikan</a></li>
+                        <li><a href="#fasilitas">Fasilitas</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Informasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Pendaftaran Santri Baru</a></li>
+                        <li><a href="#">Kalender Akademik</a></li>
+                        <li><a href="#">Berita & Artikel</a></li>
+                        <li><a href="#">Donasi & Wakaf</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Pondok Pesantren Al-Istiqomah Cukir Diwek Jombang. Semua Hak Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const nav = document.getElementById('nav');
+
+        mobileMenu.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                
+                // In a real application, you would send this data to a server
+                alert(`Terima kasih ${name}, pesan Anda dengan subyek "${subject}" telah kami terima. Kami akan menghubungi Anda melalui email ${email} segera.`);
+                
+                // Reset form
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
